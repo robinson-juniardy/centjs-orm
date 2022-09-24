@@ -1,0 +1,19 @@
+{
+  "name": "cent-orm",
+  "version": "1.0.0",
+  "description": "orm model from centjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinson-juniardy/centjs-orm.git"
+  },
+  "author": "Robby Juniardi | Lucky Dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robinson-juniardy/centjs-orm/issues"
+  },
+  "homepage": "https://github.com/robinson-juniardy/centjs-orm#readme"
+}
