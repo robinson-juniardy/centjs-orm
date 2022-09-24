@@ -1,10 +1,14 @@
 {
-  "name": "cent-orm",
+  "name": "@centjs/orm",
   "version": "1.0.0",
   "description": "orm model from centjs",
-  "main": "index.js",
+  "main": "dist/orm/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist/ && npx tsc",
+    "dev": "ts-node-dev --respawn --transpile-only src/orm/index.ts"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/robinson-juniardy/centjs-orm/issues"
   },
-  "homepage": "https://github.com/robinson-juniardy/centjs-orm#readme"
+  "homepage": "https://github.com/robinson-juniardy/centjs-orm#readme",
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  }
 }
