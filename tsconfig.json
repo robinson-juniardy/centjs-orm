@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ESNext",
     "lib": ["ES2021.String", "DOM"],
     "experimentalDecorators": true,
+    "moduleResolution": "Node",
+    "importHelpers": true,
     "emitDecoratorMetadata": true,
-    "module": "commonjs",
+    "module": "CommonJS",
     "rootDir": "./src",
+    "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
     "outDir": "./dist",
