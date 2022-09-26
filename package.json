@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "build": "rm -rf dist/ && npx tsc",
-    "dev": "ts-node-dev --respawn --transpile-only src/orm/index.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
   },
   "repository": {
     "type": "git",
