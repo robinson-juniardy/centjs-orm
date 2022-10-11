@@ -765,3 +765,24 @@ export class OrmInstance<instances> {
     return this._result;
   }
 }
+
+export abstract class StoredProcedure {
+  public static exec<sp extends StoredProcedure>(
+    this: new (...args: any[]) => sp,
+    params: Partial<sp>
+  ) {
+    let instancePayload = new Array();
+    for (let [key, value] of Object.entries(params)) {
+      if (typeof value === "string") {
+        instancePayload.push(
+          `@${String(key as keyof sp)} = '${value as string}'`
+        );
+      } else {
+        instancePayload.push(`@${String(key as keyof sp)} = ${value}`);
+      }
+    }
+    const payload: string = `EXEC ${(this as any).sp_name} ${instancePayload}`;
+
+    return payload;
+  }
+}
