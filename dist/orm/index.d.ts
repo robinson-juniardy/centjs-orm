@@ -133,5 +133,8 @@ export declare class OrmInstance<instances> {
     createWhere(): this;
     Result(): string;
 }
+export declare abstract class StoredProcedure {
+    static exec<sp extends StoredProcedure>(this: new (...args: any[]) => sp, params: Partial<sp>): string;
+}
 export {};
 //# sourceMappingURL=index.d.ts.map

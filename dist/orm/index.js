@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrmInstance = exports.GetOrmModelInstance = exports.Column = exports.References = exports.Model = void 0;
+exports.StoredProcedure = exports.OrmInstance = exports.GetOrmModelInstance = exports.Column = exports.References = exports.Model = void 0;
 require("reflect-metadata");
 var orm_metadata;
 (function (orm_metadata) {
@@ -360,4 +360,20 @@ class OrmInstance {
     }
 }
 exports.OrmInstance = OrmInstance;
+class StoredProcedure {
+    static exec(params) {
+        let instancePayload = new Array();
+        for (let [key, value] of Object.entries(params)) {
+            if (typeof value === "string") {
+                instancePayload.push(`@${String(key)} = '${value}'`);
+            }
+            else {
+                instancePayload.push(`@${String(key)} = ${value}`);
+            }
+        }
+        const payload = `EXEC ${this.sp_name} ${instancePayload}`;
+        return payload;
+    }
+}
+exports.StoredProcedure = StoredProcedure;
 //# sourceMappingURL=index.js.map
